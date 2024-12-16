@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Accessible Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Accessible Quiz Challenge</h1>
+    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+  </header>
+
+  <main id="quiz-container">
+    <section id="quiz">
+      <div class="question-area">
+        <h2 id="question" tabindex="0">Question will appear here</h2>
+      </div>
+      <div id="choices" class="choices" role="group" aria-labelledby="question"></div>
+      <button id="next-btn" class="next-btn" disabled>Next</button>
+    </section>
+
+    <section id="results" class="hidden">
+      <h2 tabindex="0">Quiz Complete!</h2>
+      <p id="final-score"></p>
+      <button id="restart-btn">Restart Quiz</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Unique Quiz Creation</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

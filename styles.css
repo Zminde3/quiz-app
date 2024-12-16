@@ -1,0 +1,143 @@
+/* Global Variables */
+:root {
+  --bg-color-light: #f9f9f9;
+  --text-color-light: #333;
+  --btn-color-light: #007bff;
+  --btn-hover-light: #0056b3;
+  --correct-color: #28a745;
+  --incorrect-color: #dc3545;
+  
+  --bg-color-dark: #121212;
+  --text-color-dark: #f0f0f0;
+  --btn-color-dark: #90caf9;
+  --btn-hover-dark: #42a5f5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: var(--text-color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: var(--text-color-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 600px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+#theme-toggle {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#quiz-container {
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] #quiz-container {
+  background: #2c2c2c;
+}
+
+.question-area {
+  margin-bottom: 1rem;
+}
+
+#question {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.choices button {
+  background: var(--btn-color-light);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s;
+  font-size: 1rem;
+}
+
+.choices button:hover, .choices button:focus {
+  background: var(--btn-hover-light);
+  transform: scale(1.05);
+}
+
+.choices button.correct {
+  background: var(--correct-color);
+}
+
+.choices button.incorrect {
+  background: var(--incorrect-color);
+}
+
+.next-btn, #restart-btn {
+  background: var(--btn-color-light);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s;
+}
+
+.next-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.next-btn:hover:not(:disabled), #restart-btn:hover {
+  background: var(--btn-hover-light);
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] footer {
+  color: var(--text-color-dark);
+}
+
+.hidden {
+  display: none;
+}
